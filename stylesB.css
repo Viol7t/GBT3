@@ -36,6 +36,7 @@ body{
     justify-content: center;
     gap: 6px;
     margin-bottom: 10px;
+    flex-wrap: nowrap;
 }
 
 .polaroid{
@@ -46,6 +47,7 @@ body{
     padding: 10px 10px 28px 10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.25);
     border: 1px solid #eee;
+    transition: transform 0.3s ease;
 }
 
 .p1{ transform: rotate(-8deg) translateY(10px); }
@@ -55,7 +57,6 @@ body{
 .polaroid:hover{
     transform: scale(1.05) rotate(0deg);
     z-index: 5;
-    transition: transform 0.3s ease;
 }
 
 /* Textkarte im Briefstil */
@@ -124,4 +125,38 @@ body{
 
 .button:hover{
     background: var(--rose);
+}
+
+/* Handy: gleiches Layout, nur kleiner */
+
+@media (max-width: 480px){
+    .polaroid-stack{
+        gap: 2px;
+    }
+
+    .polaroid{
+        width: 100px;
+        height: 120px;
+        padding: 6px 6px 16px 6px;
+    }
+
+    #Birthday-card{
+        padding: 40px 24px 30px;
+    }
+
+    #Birthday-card h1{
+        font-size: 1.9rem;
+    }
+
+    .card-text p{
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 360px){
+    .polaroid{
+        width: 82px;
+        height: 100px;
+        padding: 5px 5px 12px 5px;
+    }
 }
