@@ -1,0 +1,206 @@
+:root{
+    --bg:#5e2028;
+    --card:#fff;
+    --accent:#ff6b8a;
+    --gold:#e8c27a;
+    --muted:#6b6b6b;
+    --text:#2b2b2b;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    margin:0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--bg), var(--accent));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--text);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Schwebende Deko im Hintergrund */
+
+.confetti{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.confetti span{
+    position: absolute;
+    font-size: 1.8rem;
+    opacity: 0.7;
+    animation: drift 12s ease-in-out infinite;
+}
+
+.confetti span:nth-child(1){ left: 5%;  top: 10%; animation-delay: 0s; }
+.confetti span:nth-child(2){ left: 20%; top: 65%; animation-delay: 1.5s; font-size: 1.3rem; }
+.confetti span:nth-child(3){ left: 38%; top: 20%; animation-delay: 3s; }
+.confetti span:nth-child(4){ left: 55%; top: 75%; animation-delay: 4.5s; font-size: 1.4rem; }
+.confetti span:nth-child(5){ left: 75%; top: 15%; animation-delay: 2s; }
+.confetti span:nth-child(6){ left: 90%; top: 60%; animation-delay: 5s; font-size: 1.5rem; }
+
+@keyframes drift {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(8deg); }
+}
+
+/* Header */
+
+header{
+    position: relative;
+    z-index: 1;
+    padding: 60px 20px 30px;
+    text-align: center;
+    color: white;
+}
+
+.eyebrow-badge{
+    display: inline-block;
+    padding: 6px 18px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 30px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.sub{
+    font-size: 14px;
+    margin-top: 8px;
+    color: rgba(255,255,255,0.75);
+}
+
+/* Countdown */
+
+.top-grid{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    margin: 18px;
+}
+
+.countdown-card{
+    background: var(--card);
+    padding: 30px 36px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    min-width: 260px;
+    max-width: 360px;
+    text-align: center;
+    border-top: 4px solid var(--gold);
+}
+
+.countdown{
+    font-size: 32px;
+    font-weight: 700;
+    margin: 10px 0;
+    color: var(--bg);
+}
+
+.small{
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* Divider */
+
+.section-divider{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin: 40px 20px 20px;
+    color: white;
+}
+
+.section-divider span{
+    background: transparent;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    padding: 0 16px;
+}
+
+.section-divider::before{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 14px;
+}
+
+/* Gäste-Grid */
+
+.button-section{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 18px auto 60px;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.button-switch{
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 120px;
+    padding: 20px 10px;
+    text-decoration: none;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 16px;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.button:hover{
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.2);
+}
+
+.avatar{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.name{
+    font-weight: 600;
+    color: white;
+    font-size: 0.95rem;
+}

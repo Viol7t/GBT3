@@ -1,0 +1,23 @@
+:root{
+    --bg:#950606;
+    --card:#fff;
+    --accent:#06402B;
+    --gold:#B163FF;
+    --muted:#6b6b6b;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    margin:0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--bg), var(--accent));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #222;
+    position: relative;
+    overflow-x: hidden;
+}
